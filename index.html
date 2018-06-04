@@ -41,6 +41,12 @@
     <script>
       var main = document.getElementById('main');
       var input = document.querySelector('input');
+      var divs = document.querySelectorAll('div');
+      
+      function bubble(e) {
+        e.stopPropagation();
+        console.log(this.firstChild.nodeValue.trim() + ' bubbled');
+      }
       
       main.addEventListener('click', function(e){
         alert('I was clicked!');
@@ -53,6 +59,10 @@
           console.log(e.which)
         }
       });
+      
+      for (let i = 0; i < divs.length; i++) {
+        divs[i].addEventListener('click', bubble)
+      };
     </script>
   </body>
 </html>
