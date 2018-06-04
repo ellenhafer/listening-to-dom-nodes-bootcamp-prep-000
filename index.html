@@ -39,10 +39,15 @@
     </div>
     
     <script>
-      var main = document.getElementById('main')
+      var main = document.getElementById('main');
+      var input = document.querySelector('input');
       
       main.addEventListener('click', function(e){
         alert('I was clicked!');
+      });
+      
+      input.addEventListener('keydown', function(e){
+        console.log(e.which)
       });
     </script>
   </body>
